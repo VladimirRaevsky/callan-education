@@ -1,0 +1,7 @@
+@mixin fzRem($size) {
+  font-size: ($size / 16px) + rem;
+}
+
+@mixin lhRem($size) {
+  line-height: ($size / 16px) + rem;
+}

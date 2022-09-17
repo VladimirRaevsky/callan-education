@@ -1,0 +1,12 @@
+.social-networks-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.social-networks-icon.header-icon:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.social-networks-icon:not(:last-child) {
+  margin-right: 2.5rem;
+}

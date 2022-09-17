@@ -1,0 +1,14 @@
+@import "../../assets/styles/var";
+
+.icon {
+  transition: all $delay ease;
+}
+
+.icon:hover {
+  stroke: #c6eaff;
+  box-shadow: 0 0 2.5rem rgba(146, 214, 255, 0.5);
+
+  transition: all $delay ease;
+
+  cursor: pointer;
+}

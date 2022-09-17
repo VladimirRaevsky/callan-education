@@ -1,0 +1,45 @@
+@import "../../assets/styles/var";
+
+.list {
+  width: 58rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  padding: 5px 0;
+}
+
+.link {
+  position: relative;
+
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.3rem;
+  text-decoration: none;
+  color: var(--color-boulder);
+}
+
+.linkHover {
+  &::before {
+    content: "";
+
+    background-image: url("../../assets/images/header/line.svg");
+
+    position: absolute;
+    top: 20px;
+    left: -2px;
+
+    width: 0%;
+    height: 5px;
+
+    transition: width $delay ease;
+  }
+
+  &:hover:before {
+    width: 110%;
+
+    transition: width $delay ease;
+  }
+}
