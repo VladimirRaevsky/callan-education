@@ -1,83 +1,38 @@
 import React from "react";
 
-import { NavListProps } from "./NavList.interface";
+import { NavListProps } from "./NavList.props";
 
 import styles from "./NavList.module.scss";
 import cl from "classnames";
 
 function NavList({ hover = true }: NavListProps): JSX.Element {
+  const MENU_ITEM = [
+    "Главная",
+    "О нас",
+    "Услуги",
+    "Университеты",
+    "Студенты",
+    "Новости",
+    "Контакты",
+  ];
   return (
     <ul className={styles.list}>
-      <li className={styles.item}>
-        <a
-          className={cl(styles.link, {
-            [styles.linkHover]: hover,
-          })}
-          href="/"
-        >
-          Главная
-        </a>
-      </li>
-      <li className={styles.item}>
-        <a
-          className={cl(styles.link, {
-            [styles.linkHover]: hover,
-          })}
-          href="/"
-        >
-          О нас
-        </a>
-      </li>
-      <li className={styles.item}>
-        <a
-          className={cl(styles.link, {
-            [styles.linkHover]: hover,
-          })}
-          href="/"
-        >
-          Услуги
-        </a>
-      </li>
-      <li className={styles.item}>
-        <a
-          className={cl(styles.link, {
-            [styles.linkHover]: hover,
-          })}
-          href="/"
-        >
-          Университеты
-        </a>
-      </li>
-      <li className={styles.item}>
-        <a
-          className={cl(styles.link, {
-            [styles.linkHover]: hover,
-          })}
-          href="/"
-        >
-          Студенты
-        </a>
-      </li>
-      <li className={styles.item}>
-        <a
-          className={cl(styles.link, {
-            [styles.linkHover]: hover,
-          })}
-          href="/"
-        >
-          Новости
-        </a>
-      </li>
-      <li className={styles.item}>
-        <a
-          className={cl(styles.link, {
-            [styles.linkHover]: hover,
-          })}
-          href="/"
-        >
-          Контакты
-        </a>
-      </li>
+      <>
+        {MENU_ITEM.map((el: string): JSX.Element  => {
+          return (
+            <li className={styles.item} key={el}>
+              <a
+                className={cl(styles.link, {
+                  [styles.linkHover]: hover,
+                })}
+                href="/"
+              >
+                {el}
+              </a>
+            </li>
+          );
+        })}
+      </>
     </ul>
   );
 }

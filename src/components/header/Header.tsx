@@ -1,11 +1,13 @@
 import React from "react";
 import Container from "../container/Container";
+import FeedbackButton from "../UI/feedbackButton/FeedbackButton";
+import ChangeLanguage from "../changeLanguage/ChangeLanguage";
+import NavList from "../navList/NavList";
 
 import Logo from "../../assets/images/headerLogo/logo.svg";
+import Icons from "../icons/Icons";
 
 import styles from "./Header.module.scss";
-import Icons from "../icons/Icons";
-import NavList from "../navList/NavList";
 
 export default function Header(): JSX.Element {
   const HEADER_ICONS = [
@@ -39,12 +41,13 @@ export default function Header(): JSX.Element {
             <NavList />
           </nav>
 
-          <div>
-            <button>ru</button>
-            <button>uk</button>
+          <div className={styles["change-language"]}>
+            <ChangeLanguage />
           </div>
-          <div>
-            <button style={{ width: "100%" }}>Оставить заявку</button>
+          <div className={styles["feedback-button"]}>
+            <FeedbackButton text={"Оставить заявку"} appearance={"ghost"}>
+              <Icons name={"letter"} width={"14"} height={"14"} />
+            </FeedbackButton>
           </div>
         </div>
       </Container>

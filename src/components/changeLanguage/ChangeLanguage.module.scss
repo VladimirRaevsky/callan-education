@@ -1,0 +1,22 @@
+.btn {
+  display: inline-block;
+
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+  font-weight: 500;
+  color: var(--color-boulder);
+
+  background-color: transparent;
+  border: none;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+.btn.active {
+  color: var(--color-malibu);
+}

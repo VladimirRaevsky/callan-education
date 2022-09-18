@@ -1,4 +1,5 @@
-import { IconsType } from "./Icons.interface";
+import { IconsType } from "./Icons.props";
+
 import IconsSVG from "./icons.svg";
 import styles from "./Icon.module.scss";
 

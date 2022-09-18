@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SocialNetworksType } from "./SocialNetworksType.interface";
+import { SocialNetworksType } from "./SocialNetworksType.props";
 
 import styles from "./SocialNetworks.module.scss";
 import cl from "classnames";
