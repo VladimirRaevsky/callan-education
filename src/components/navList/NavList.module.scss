@@ -1,10 +1,24 @@
 @import "../../assets/styles/var";
+// @import "../../assets/styles/mixins";
 
-.list {
-  width: 58rem;
+.listHorizontally {
+  width: 36.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.listVertically {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px !important;
+}
+
+.listVertically .item {
+  line-height: 35px;
 }
 
 .item {
@@ -15,8 +29,8 @@
   position: relative;
 
   font-weight: 5 00;
-  font-size: 1.4rem;
-  line-height: 1.3rem;
+  font-size: 0.875rem;
+  line-height: 0.812rem;
   text-decoration: none;
   color: var(--color-boulder);
 }
@@ -41,5 +55,11 @@
     width: 110%;
 
     transition: width $delay ease;
+  }
+}
+
+@media (max-width: 1350px) {
+  .listHorizontally {
+    width: 100%;
   }
 }

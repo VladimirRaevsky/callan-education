@@ -1,15 +1,14 @@
 import React from "react";
-import { withLayout } from "../../components/layout/Layout";
+
+import Layout from "../../components/layout/Layout";
+import "./home.scss";
 
 function Home(): JSX.Element {
   return (
-    <div>
-      <h1>h1</h1>
-
-      <h2>h2</h2>
-      <p>ppp</p>
-    </div>
+    <Layout>
+      <h1>Грант и контрактное обучение<br></br> в зарубежных вузах</h1>
+    </Layout>
   );
 }
 
-export default withLayout(Home);
+export default Home;

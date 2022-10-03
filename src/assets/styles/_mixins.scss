@@ -1,7 +1,4 @@
-@mixin fzRem($size) {
-  font-size: ($size / 16px) + rem;
-}
-
-@mixin lhRem($size) {
-  line-height: ($size / 16px) + rem;
+@mixin size($minFont, $maxFont, $minLineHeight, $maxLineHeight) {
+  font-size: clamp($minFont, 3vw, $maxFont);
+  line-height: clamp($minLineHeight, 3vw, $maxLineHeight);
 }

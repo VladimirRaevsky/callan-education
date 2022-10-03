@@ -6,7 +6,7 @@ import styles from "./Icon.module.scss";
 function Icons({ name, color, width, height }: IconsType): JSX.Element {
   return (
     <svg
-      className={`${styles.icon}`}
+      className={`${styles.icon} ${styles[`icon-${name}`]}`}
       fill={color}
       stroke={color}
       width={width}

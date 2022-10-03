@@ -3,10 +3,15 @@
 .button {
   position: relative;
 
+  display: flex;
+  justify-content: flex-end;
+  height: 3rem;
   font-weight: 700;
+  font-size: 1rem;
+  line-height: 0.937rem;
 
   border: none;
-  border-radius: 2.5rem;
+  border-radius: 1.562rem;
 
   transition: all $delay;
 
@@ -14,15 +19,14 @@
 
   span {
     position: absolute;
-    left: 0.5rem;
-    top: 0.5rem;
-    bottom: 0.5rem;
+    left: 0.4rem;
+    top: 0.2rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 2.375rem;
+    height: 2.375rem;
 
     border-radius: 2.5rem;
 
@@ -31,32 +35,28 @@
 }
 
 .leave {
-  width: 21.5rem;
-  height: 4.8rem;
-  padding: 1.7rem 3rem 1.7rem 6rem;
+  width: 13.437rem;
 
-  font-size: 1.4rem;
-  line-height: 1.3rem;
+  padding: 1rem 1.187rem 1rem 1.187rem;
+
   color: var(--color-malibu);
 
   background: var(--color-white);
-  border: 1px solid red;
+  border: 1px solid #b1e2ff;
 
   span {
-    top: 0.4rem;
-    
     background: linear-gradient(213.88deg, #b1e2ff -67.78%, #68c7ff 175.48%);
   }
 }
 
+.button.contact {
+  justify-content: center;
+}
 .contact {
-  width: 24rem;
-  height: 4.8rem;
-  padding: 1.7rem 3.4rem 1.7rem 6rem;
+  width: 15rem;
 
-  font-size: 16px;
-  line-height: 15px;
-  text-align: center;
+  padding: 1rem 1.187rem 1rem 2.187rem;
+
   color: #ffffff;
 
   background: linear-gradient(213.88deg, #b1e2ff -67.78%, #68c7ff 175.48%);
@@ -95,4 +95,3 @@
     }
   }
 }
-

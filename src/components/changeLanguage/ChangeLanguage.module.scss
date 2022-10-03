@@ -1,8 +1,8 @@
 .btn {
   display: inline-block;
 
-  font-size: 1.2rem;
-  line-height: 1.1rem;
+  font-size: 0.75rem;
+  line-height: 0.687rem;
   font-weight: 500;
   color: var(--color-boulder);
 
@@ -11,6 +11,10 @@
 
   user-select: none;
   cursor: pointer;
+  
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .btn:focus:not(:focus-visible) {

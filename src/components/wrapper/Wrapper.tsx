@@ -1,4 +1,3 @@
-import React from "react";
 import { ChildrenType } from "../../interfaces/Children";
 
 import styles from "./Wrapper.module.scss";

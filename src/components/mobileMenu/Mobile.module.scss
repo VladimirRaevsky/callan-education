@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+
+  background-color: var(--color-alice-blue);
+}
+
+.change-language {
+  margin: 20px 0;
+}
+

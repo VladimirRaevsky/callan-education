@@ -1,39 +1,45 @@
-import React from "react";
-
-import { NavListProps } from "./NavList.props";
+import { MenuItemType, NavListProps } from "./NavList.type";
 
 import styles from "./NavList.module.scss";
 import cl from "classnames";
 
-function NavList({ hover = true }: NavListProps): JSX.Element {
+function NavList({ hover = true, direction }: NavListProps): JSX.Element {
   const MENU_ITEM = [
-    "Главная",
-    "О нас",
-    "Услуги",
-    "Университеты",
-    "Студенты",
-    "Новости",
-    "Контакты",
+    { value: "Главная", href: "/" },
+    { value: "О нас", href: "about" },
+    { value: "Услуги", href: "services" },
+    { value: "Университеты", href: "universities" },
+    { value: "Студенты", href: "students" },
+    { value: "Новости", href: "news" },
+    { value: "Контакты", href: "contacts" },
   ];
+
   return (
-    <ul className={styles.list}>
-      <>
-        {MENU_ITEM.map((el: string): JSX.Element  => {
-          return (
-            <li className={styles.item} key={el}>
-              <a
-                className={cl(styles.link, {
-                  [styles.linkHover]: hover,
-                })}
-                href="/"
-              >
-                {el}
-              </a>
-            </li>
-          );
+    <nav className={styles.nav}>
+      <ul
+        className={cl({
+          [styles.listVertically]: direction === "vertically",
+          [styles.listHorizontally]: direction === "horizontally",
         })}
-      </>
-    </ul>
+      >
+        <>
+          {MENU_ITEM.map((el: MenuItemType): JSX.Element => {
+            return (
+              <li className={styles.item} key={el.href}>
+                <a
+                  className={cl(styles.link, {
+                    [styles.linkHover]: hover,
+                  })}
+                  href={el.href}
+                >
+                  {el.value}
+                </a>
+              </li>
+            );
+          })}
+        </>
+      </ul>
+    </nav>
   );
 }
 

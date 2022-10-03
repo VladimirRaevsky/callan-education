@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../container/Container";
 import FeedbackButton from "../UI/feedbackButton/FeedbackButton";
 import ChangeLanguage from "../changeLanguage/ChangeLanguage";
 import NavList from "../navList/NavList";
+import MobileMenu from "../mobileMenu/MobileMenu";
+
+import { HeaderType } from "./Header.type";
 
 import Logo from "../../assets/images/headerLogo/logo.svg";
 import Icons from "../icons/Icons";
@@ -16,6 +19,8 @@ export default function Header(): JSX.Element {
     { name: "youtube", color: "#52BFFF", width: "24", height: "17" },
   ];
 
+  const [openMenu, setOpenMenu] = useState<boolean>(true);
+
   return (
     <header className={styles.header}>
       <Container>
@@ -25,21 +30,23 @@ export default function Header(): JSX.Element {
           </div>
 
           <div className={styles["icons-wrapper"]}>
-            {HEADER_ICONS.map((icon) => (
-              <div className={styles["social-network-icon"]} key={icon.name}>
-                <Icons
-                  name={icon.name}
-                  color={icon.color}
-                  width={icon.width}
-                  height={icon.height}
-                />
-              </div>
-            ))}
+            {HEADER_ICONS.map(
+              (icon: HeaderType): JSX.Element => (
+                <div className={styles["social-network-icon"]} key={icon.name}>
+                  <Icons
+                    name={icon.name}
+                    color={icon.color}
+                    width={icon.width}
+                    height={icon.height}
+                  />
+                </div>
+              )
+            )}
           </div>
 
-          <nav className={styles.nav}>
-            <NavList />
-          </nav>
+          <div className={styles.list}>
+            <NavList direction="horizontally" />
+          </div>
 
           <div className={styles["change-language"]}>
             <ChangeLanguage />
@@ -49,8 +56,29 @@ export default function Header(): JSX.Element {
               <Icons name={"letter"} width={"14"} height={"14"} />
             </FeedbackButton>
           </div>
+
+          <div className={styles.burger} onClick={() => setOpenMenu(!openMenu)}>
+            {openMenu ? (
+              <Icons
+                name={"burger"}
+                width={"40"}
+                height={"40"}
+                color={"#52BFFF"}
+              />
+            ) : (
+              <Icons
+                name={"close"}
+                width={"40"}
+                height={"40"}
+                color={"#52BFFF"}
+              />
+            )}
+          </div>
         </div>
       </Container>
+      <div className={styles.mobileMenu}>
+        <MobileMenu />
+      </div>
     </header>
   );
 }
