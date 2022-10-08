@@ -1,0 +1,46 @@
+.top {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: auto;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+
+  z-index: -1;
+}
+
+.bg picture img {
+  min-height: 100vh;
+
+  object-fit: cover;
+}
+
+.wrapper {
+  padding-top: 200px;
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding-top: 168px;
+  }
+}
+
+@media (orientation: landscape) {
+  .wrapper {
+    padding-top: 168px;
+  }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  .wrapper {
+    padding-top: 70px;
+  }
+}

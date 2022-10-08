@@ -5,25 +5,36 @@ import NavList from "../navList/NavList";
 import FeedbackButton from "../UI/feedbackButton/FeedbackButton";
 import We from "../we/We";
 
+import { MobileProps } from "./MobileMenu.props";
+
 import styles from "./Mobile.module.scss";
+import cl from "classnames";
 
-function MobileMenu(props: any): JSX.Element {
+function MobileMenu({ openMenu, setOpenMenu }: MobileProps): JSX.Element {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles["change-language"]}>
-        <ChangeLanguage />
-      </div>
+    <div
+      className={cl(styles.menu, {
+        [styles.active]: openMenu,
+      })}
+    >
+      <div className={styles.wrapper}>
+        <div className={styles["change-language"]}>
+          <ChangeLanguage />
+        </div>
 
-      <NavList hover={false} direction="vertically" />
+        <div>
+          <NavList hover={false} direction="vertically" />
+        </div>
 
-      <div className={styles["feedback-button"]}>
-        <FeedbackButton text={"Оставить заявку"} appearance={"ghost"}>
-          <Icons name={"letter"} width={"14"} height={"14"} />
-        </FeedbackButton>
-      </div>
+        <div className={styles["feedback-button"]}>
+          <FeedbackButton text={"Оставить заявку"} appearance={"ghost"}>
+            <Icons name={"letter"} width={"14"} height={"14"} />
+          </FeedbackButton>
+        </div>
 
-      <div className={styles.address}>
-        <We direction='vertically' />
+        <div className={styles.address}>
+          <We direction="vertically" />
+        </div>
       </div>
     </div>
   );

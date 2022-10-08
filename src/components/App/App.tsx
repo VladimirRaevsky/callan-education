@@ -1,11 +1,10 @@
 import Home from "../../pages/home/Home";
-
-import styles from "./App.module.scss";
+import Layout from "../layout/Layout";
 
 export default function App(): JSX.Element {
   return (
-    <div className={styles.App}>
+    <Layout>
       <Home />
-    </div>
+    </Layout>
   );
 }

@@ -1,5 +1,4 @@
-import React, { FunctionComponent } from "react";
-import Container from "../container/Container";
+import React from "react";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import Wrapper from "../wrapper/Wrapper";
@@ -11,10 +10,7 @@ function Layout({ children }: ChildrenType): JSX.Element {
     <Wrapper>
       <Header />
 
-      <main className="main">
-        <Container>{children}</Container>
-      </main>
-
+      <main className="main">{children}</main>
       <Footer />
     </Wrapper>
   );
